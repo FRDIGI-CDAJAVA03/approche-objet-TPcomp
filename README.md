@@ -2,20 +2,20 @@
 
 Présentation du plan du TP et affectation des équipes 
 
-## TP1
+## TP1 Complementaire
 
-### Ampoule
-### Cercle
-### Facture
-### Date
-### CercleFactory
-### Operations
-### CalculMoyenne
-### Theathre
-### Manipulation Chaine
-### Forme
-### CalculSalaire
-### Immobilier
-### TheathrePro
-### Parseur
-### Jeu de rôle
+- [ ] Ampoule
+- [ ] Cercle
+- [ ] Facture
+- [ ] Date
+- [ ] CercleFactory
+- [ ] Operations
+- [ ] CalculMoyenne
+- [ ] Theathre
+- [ ] Manipulation Chaine
+- [ ] Forme
+- [ ] CalculSalaire
+- [ ] Immobilier
+- [ ] TheathrePro
+- [ ] Parseur
+- [ ] Jeu de rôle
