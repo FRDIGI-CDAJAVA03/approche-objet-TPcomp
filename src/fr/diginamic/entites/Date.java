@@ -52,4 +52,36 @@ public class Date {
                 throw new IllegalStateException("Mauvais type: " + type);
         }
     }
+    public boolean estAvant(Date date){
+        return date.getAnnee() < this.annee ||
+                (date.getAnnee() == this.annee &&
+                        date.getMois() < this.mois) ||
+                (date.getAnnee() == this.annee &&
+                        date.getMois() == this.mois &&
+                        date.getJour() < this.jour);
+    }
+    public boolean estApres(Date date){
+        return date.getAnnee() > this.annee ||
+                (date.getAnnee() == this.annee &&
+                        date.getMois() > this.mois) ||
+                (date.getAnnee() == this.annee &&
+                        date.getMois() == this.mois &&
+                        date.getJour() > this.jour);
+    }
+    public boolean estEgal(Date date){
+        return date.getAnnee() == this.annee &&
+                date.getMois() == this.mois &&
+                date.getJour() == this.jour;
+    }
+    public int getJour() {
+        return jour;
+    }
+
+    public int getMois() {
+        return mois;
+    }
+
+    public int getAnnee() {
+        return annee;
+    }
 }
