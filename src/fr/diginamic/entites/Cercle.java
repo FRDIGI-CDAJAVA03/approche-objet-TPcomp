@@ -1,14 +1,14 @@
 package fr.diginamic.entites;
 
 public class Cercle {
-    private double rayon;
-    public Cercle(double rayon){
-        this.rayon = rayon;
+    private final double RAYON;
+    public Cercle(double RAYON){
+        this.RAYON = RAYON;
     }
     public double perimetre(){
-        return 2 * Math.PI * rayon;
+        return 2 * Math.PI * RAYON;
     }
     public double aire(){
-        return Math.PI * Math.pow(rayon, 2);
+        return Math.PI * Math.pow(RAYON, 2);
     }
 }
