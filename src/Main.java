@@ -1,5 +1,6 @@
 import fr.diginamic.exerciceAmpoule.TestAmpoule;
 import fr.diginamic.exerciceCercle.TestCercle;
+import fr.diginamic.exerciceFacture.TestFacture;
 import mochizukiTools.Params;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -9,5 +10,6 @@ public class Main {
         Params.welcomePrompt();
         TestAmpoule.run();
         TestCercle.run();
+        TestFacture.run();
     }
 }
