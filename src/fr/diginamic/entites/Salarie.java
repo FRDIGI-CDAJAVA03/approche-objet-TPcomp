@@ -13,7 +13,7 @@ public class Salarie {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Salarie{");
+        final StringBuilder sb = new StringBuilder("Salarie{");
         sb.append("NOM='").append(NOM).append('\'');
         sb.append(", PRENOM='").append(PRENOM).append('\'');
         sb.append(", SALAIRE=").append(String.format("%.2f", SALAIRE));

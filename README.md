@@ -13,7 +13,7 @@ Projet en équipe.
 - [x] CalculMoyenne
 - [x] Theatre
 - [x] ManipulationChaine
-- [ ] Forme
+- [x] Forme
 - [ ] CalculSalaire
 - [ ] Immobilier
 - [ ] TheatrePro
