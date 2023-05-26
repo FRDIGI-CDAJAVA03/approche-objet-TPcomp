@@ -13,6 +13,8 @@ public class TestIntervenant {
                     SALARIE.getSalaire());
             System.out.printf("Salaire total mensuel du pigiste : %f\n",
                     PIGISTE.getSalaire());
+            Intervenant.afficherDonnees(SALARIE);
+            Intervenant.afficherDonnees(PIGISTE);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }

@@ -19,7 +19,20 @@ public abstract class Intervenant {
         this.NOM = nom;
         this.PRENOM = prenom;
     }
-
+    public static void afficherDonnees(Intervenant intervenant){
+        final String[] SALAIRE_ET_STATUT = intervenant.getSalaireStatut();
+        System.out.printf("{\n  nom: %s,\n  prenom: %s,\n  salaire: %s,\n  statut: %s\n}\n",
+                intervenant.NOM,
+                intervenant.PRENOM,
+                SALAIRE_ET_STATUT[0],
+                SALAIRE_ET_STATUT[1]);
+    }
+    /**
+     * Accéder textuellement au salaire mensuel et
+     * au statut de l’intervenant.
+     * @return Salaire et statut
+     */
+    protected abstract String[] getSalaireStatut();
     /**
      * Accéder au salaire de l’intervenant.
      * @return Salaire

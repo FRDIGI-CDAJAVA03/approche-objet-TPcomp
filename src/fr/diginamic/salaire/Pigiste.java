@@ -25,6 +25,15 @@ public class Pigiste extends Intervenant{
         this.JOURS = jours;
     }
     /**
+     * Accéder textuellement au salaire mensuel et
+     * au statut du pigiste.
+     * @return Salaire et statut
+     */
+    @Override
+    protected String[] getSalaireStatut() {
+        return new String[]{String.format("%f", this.SALAIRE * this.JOURS), "pigiste"};
+    }
+    /**
      * Accéder au salaire du pigiste.
      * @return Salaire
      */

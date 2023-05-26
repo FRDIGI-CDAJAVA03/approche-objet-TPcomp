@@ -19,6 +19,16 @@ public class Salarie extends Intervenant{
         this.SALAIRE = salaire;
     }
     /**
+     * Accéder textuellement au salaire mensuel et
+     * au statut du salarié.
+     * @return Salaire et statut
+     */
+    @Override
+    protected String[] getSalaireStatut() {
+        return new String[]{String.format("%f", this.SALAIRE), "salarie"};
+    }
+
+    /**
      * Accéder au salaire du salarié.
      * @return Salaire
      */
