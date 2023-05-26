@@ -11,4 +11,7 @@ public class Cercle {
     public double aire(){
         return Math.PI * Math.pow(RAYON, 2);
     }
+    public String toString(){
+        return String.format("{rayon: %f}", this.RAYON);
+    }
 }
