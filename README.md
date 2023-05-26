@@ -12,7 +12,7 @@ Projet en équipe.
 - [x] Operations
 - [x] CalculMoyenne
 - [x] Theatre
-- [ ] Manipulation Chaine
+- [x] ManipulationChaine
 - [ ] Forme
 - [ ] CalculSalaire
 - [ ] Immobilier
