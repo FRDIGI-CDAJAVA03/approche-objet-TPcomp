@@ -1,10 +1,10 @@
 package fr.diginamic.essais;
 
-import fr.diginamic.entites.Date;
+import fr.diginamic.entites.Dates;
 
 public class TestDates {
     public static void main(String[] args) {
-        Date date = new Date(26, 5, 2021);
+        Dates date = new Dates(26, 5, 2021);
         String format1 = date.format(1);
         System.out.println(format1);
         String format2 = date.format(2);
