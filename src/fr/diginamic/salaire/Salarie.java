@@ -6,7 +6,7 @@ package fr.diginamic.salaire;
  * à durée déterminée ou indéterminée.
  */
 public class Salarie extends Intervenant{
-    /** Salaire hebdomadaire */
+    /** Salaire mensuel */
     private final double SALAIRE;
     /**
      * Construction du salarié.
