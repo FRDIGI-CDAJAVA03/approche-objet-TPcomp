@@ -1,9 +1,16 @@
 package fr.diginamic.maison;
 
+/** Pièce d’une maison */
 public abstract class Piece {
-    static final int PIECE = 0;
+    /** Superficie de la pièce */
     private double SUPERFICIE;
+    /** Numéro d’étage de la pièce */
     private byte ETAGE;
+    /**
+     * Construction d’une pièce.
+     * @param superficie Superficie
+     * @param etage Numéro d’étage
+     */
     public Piece(double superficie, byte etage) {
         try{
             if(superficie < 0){
@@ -17,12 +24,24 @@ public abstract class Piece {
             System.err.println(ex.getMessage());
         }
     }
+    /**
+     * Obtenir l’aire de superficie de la pièce.
+     * @return Aire de superficie
+     */
     double getSuperficie() {
         return this.SUPERFICIE;
     }
+    /**
+     * Obtenir le numéro d’étage.
+     * @return Numéro d’étage
+     */
     byte getEtage() {
         return this.ETAGE;
     }
+    /**
+     * Obtenir le numéro du type de pièce.
+     * @return Numéro du type de pièce
+     */
     int getType() {
         return 0;
     }
