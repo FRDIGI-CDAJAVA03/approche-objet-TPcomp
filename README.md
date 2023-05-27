@@ -7,10 +7,10 @@ Présentation du plan du TP et affectation des équipes
 - [x] Ampoule
 - [x] Cercle
 - [x] Facture
-- [ ] Date
-- [ ] CercleFactory
-- [ ] Operations
-- [ ] CalculMoyenne
+- [x] Date
+- [x] CercleFactory
+- [x] Operations
+- [x] CalculMoyenne
 - [ ] Theathre
 - [ ] Manipulation Chaine
 - [ ] Forme
