@@ -36,4 +36,40 @@ public class Maison {
         }
         return superficieTotale;
     }
+    public double getSuperficieTotale(int type){
+        double superficieTotale = 0.0;
+        for(Piece piece: this.pieces){
+            if(piece.getType() == type){
+                superficieTotale += piece.getSuperficie();
+            }
+        }
+        return superficieTotale;
+    }
+    public double getSuperficieTotale(PieceType type){
+        double superficieTotale = 0.0;
+        for(Piece piece: this.pieces){
+            if(piece.getType() == type.value()){
+                superficieTotale += piece.getSuperficie();
+            }
+        }
+        return superficieTotale;
+    }
+    public int getNombreDePieces(int type){
+        int nombreTotal = 0;
+        for(Piece piece: this.pieces){
+            if(piece.getType() == type){
+                nombreTotal++;
+            }
+        }
+        return nombreTotal;
+    }
+    public int getNombreDePieces(PieceType type){
+        int nombreTotal = 0;
+        for(Piece piece: this.pieces){
+            if(piece.getType() == type.value()){
+                nombreTotal++;
+            }
+        }
+        return nombreTotal;
+    }
 }

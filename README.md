@@ -14,8 +14,8 @@ Projet en équipe.
 - [x] Theatre
 - [x] ManipulationChaine
 - [x] Forme
-- [ ] CalculSalaire
-- [ ] Immobilier
+- [x] CalculSalaire
+- [x] Immobilier
 - [ ] TheatrePro
 - [ ] Parseur
 - [ ] Jeu de rôle

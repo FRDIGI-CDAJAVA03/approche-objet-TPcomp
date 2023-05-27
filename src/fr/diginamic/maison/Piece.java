@@ -1,6 +1,7 @@
 package fr.diginamic.maison;
 
 public abstract class Piece {
+    static final int PIECE = 0;
     private double SUPERFICIE;
     private byte ETAGE;
     public Piece(double superficie, byte etage) {
@@ -21,5 +22,8 @@ public abstract class Piece {
     }
     byte getEtage() {
         return this.ETAGE;
+    }
+    int getType() {
+        return 0;
     }
 }
