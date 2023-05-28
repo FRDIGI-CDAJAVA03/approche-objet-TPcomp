@@ -18,7 +18,9 @@ import fr.diginamic.parseur.Parser;
 public class TestParseur {
     public static void main(String[] args){
         try{
-            final Expression EXPRESSION = Parser.parse("b4*3.2");
+            final Expression EXPRESSION = Parser.parse("3.3*3.2");
+            final double RESULT = EXPRESSION.evaluer("b4", 2.0);
+            System.out.println(RESULT);
         } catch (BadEquationException ex) {
             ex.printStackTrace();
         }
