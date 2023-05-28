@@ -1,11 +1,26 @@
 package fr.diginamic.parseur;
-
+/** Expression arithmétique */
 public class Expression {
+    /** Opérande de gauche */
     private final String OPERAND_LEFT;
+    /** Caractère de l’opérateur binaire */
     private final char OPERATOR;
+    /** Opérande de droite */
     private final String OPERAND_RIGHT;
+    /** Variabilité à gauche */
     private final boolean IS_LEFT_VAR;
+    /** Variabilité à droite */
     private final boolean IS_RIGHT_VAR;
+
+    /**
+     * Construction de l’expression arithmétique évaluable.
+     * @param operandLeft Opérande de gauche
+     * @param operator Opérateur binaire
+     * @param operandRight Opérande de droite
+     * @param type Type d’expression
+     * @throws BadEquationException Exception due à une mauvaise écriture
+     * de l’équation
+     */
     Expression(String operandLeft,
             char operator,
             String operandRight,
@@ -29,6 +44,16 @@ public class Expression {
             default -> throw new BadEquationException("Bad equation syntax!");
         }
     }
+
+    /**
+     * Évaluer l’expression selon une variable explicite.
+     * La variable déclarée doit correspondre à celle de l’expression.
+     * @param key Nom clé de la variable.
+     * @param value Valeur de la variable.
+     * @return Valeur obtenue par le calcul de l’expression.
+     * @throws BadEquationException Exception due à un mauvais nom de
+     * la variable
+     */
     public double evaluer(String key, double value) throws BadEquationException{
         if(!IS_LEFT_VAR && !IS_RIGHT_VAR){
             final double CONST_LEFT = Double.parseDouble(OPERAND_LEFT);
@@ -50,6 +75,16 @@ public class Expression {
             throw new BadEquationException("Bad equation syntax (bad operator)!");
         }
     }
+
+    /**
+     * Calculer selon l’opérateur binaire choisi.
+     * @param operandLeft Opérande de gauche
+     * @param operator Caractère de l’opérateur
+     * @param operandRight Opérande de droite
+     * @return Résultat du calcul
+     * @throws BadEquationException Exception due à un mauvais opérateur
+     * binaire.
+     */
     private double operate(double operandLeft,
             char operator,
             double operandRight) throws BadEquationException{
@@ -66,7 +101,7 @@ public class Expression {
             case '/' -> {
                 return operandLeft / operandRight;
             }
-            default -> throw new BadEquationException("Bad equation syntax!");
+            default -> throw new BadEquationException("Bad equation syntax (bad operator)!");
         }
     }
 }
