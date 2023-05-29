@@ -11,7 +11,8 @@ public class TestTheathre {
         System.out.println(theathre.getRecetteTotal());
 
         theathre.inscrire(4, BigDecimal.valueOf(12.5));
+        System.out.println(theathre.getTotalClient());
         System.out.println(theathre.getRecetteTotal());
-        theathre.inscrire(3, BigDecimal.valueOf(12.5));
+        theathre.inscrire(1, BigDecimal.valueOf(12.5));
     }
 }
