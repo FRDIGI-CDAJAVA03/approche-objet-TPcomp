@@ -11,10 +11,10 @@ Présentation du plan du TP et affectation des équipes
 - [x] CercleFactory
 - [x] Operations
 - [x] CalculMoyenne
-- [ ] Theathre
+- [x] Theathre
 - [ ] Manipulation Chaine
 - [ ] Forme
-- [ ] CalculSalaire
+- [x] CalculSalaire
 - [ ] Immobilier
 - [ ] TheathrePro
 - [ ] Parseur

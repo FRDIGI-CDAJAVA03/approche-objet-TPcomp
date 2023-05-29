@@ -18,7 +18,6 @@ public class Theathre {
     }
 
     public void inscrire(int nbClient, BigDecimal prix) {
-        System.out.println("Nombre de client total : " + this.totalClient);
         if(nbClient + this.totalClient >= this.capacity){
             System.out.println("Ooops sorry no place available left.");
         } else if (nbClient <= this.capacity){
@@ -26,7 +25,6 @@ public class Theathre {
             BigDecimal recette = prix.multiply(BigDecimal.valueOf(nbClient));
             this.recetteTotal = this.recetteTotal.add(recette);
         }
-        System.out.println("Nombre de client total après dernier inscrit : " + this.totalClient);
     }
 
     public String getName() {
