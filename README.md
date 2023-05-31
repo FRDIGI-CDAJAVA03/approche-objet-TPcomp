@@ -18,4 +18,4 @@ Projet en équipe.
 - [x] Immobilier
 - [x] TheatrePro
 - [x] Parseur
-- [ ] Jeu de rôle
+- [x] Jeu de rôle
