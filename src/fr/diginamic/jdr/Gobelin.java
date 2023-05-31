@@ -5,6 +5,11 @@ class Gobelin extends Creature{
      * Construction de gobelin.
      */
     Gobelin(){
-        super(3, 8, 5, 10, "Gobelin");
+        super(5,
+                10,
+                10,
+                15,
+                2,
+                "Gobelin");
     }
 }

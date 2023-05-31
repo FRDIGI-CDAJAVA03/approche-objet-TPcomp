@@ -4,9 +4,10 @@ import java.util.Scanner;
 
 /**
  * Application dédiée au jeu de rôle.
- * @author alnotz
+ * @author FYHenry
  */
 public class Application {
+    /** Texte du menu de démarrage */
     private static final String startMenuText = """
                 
                 0. Créer un personnage
@@ -14,6 +15,7 @@ public class Application {
                 2. Afficher score\u001b[0m
                 3. Sortir
                 """;
+    /** Texte du menu principal */
     private static final String menuText = """
                 
                 0. Créer un personnage
@@ -21,6 +23,7 @@ public class Application {
                 2. Afficher score
                 3. Sortir
                 """;
+    /** Texte du menu de combat */
     private static final String creatureMenuText = """
             
             Combattre…
@@ -28,12 +31,24 @@ public class Application {
             1. Un gobelin
             2. Un ogre
             """;
+    /** Texte de tentative nouvelle */
     private static final String retryText = "Essaye encore…";
+
+    /**
+     * Méthode principale de l’application.
+     * @param args Arguments
+     */
     public static void main(String[] args){
         final Scanner input = new Scanner(System.in);
         final Personnage personnage = createPersonnage(input);
         continueWith(input, personnage);
     }
+
+    /**
+     * Créer un personnage.
+     * @param input Scanner
+     * @return Personnage
+     */
     private static Personnage createPersonnage(Scanner input){
         System.out.println(startMenuText);
         while(input.hasNextLine()){
@@ -58,6 +73,12 @@ public class Application {
         }
         throw new RuntimeException("Unknown loop error.");
     }
+
+    /**
+     * Continuer avec ce personnage.
+     * @param input Scanner
+     * @param personnage Personnage
+     */
     private static void continueWith(Scanner input, Personnage personnage){
         while(input.hasNextLine()){
             final String response = input.nextLine();
@@ -69,7 +90,18 @@ public class Application {
                         System.out.println(menuText);
                     }
                     case '1' -> {
-                        Creature creature = selectCreature(input);
+                        final Creature creature = selectCreature(input);
+                        creature.showStats();
+                        if(personnage.getHealth() <= 0){
+                            System.out.printf("Votre personnage est décédé. Il a obtenu le" +
+                                            "score de %d points. Veuillez créer un nouveau personnage",
+                                    personnage.getScore());
+                        } else {
+                            final boolean SUCCESS = winTheFight(personnage, creature);
+                            if(SUCCESS) {
+                                personnage.growScore(creature.dropScore());
+                            }
+                        }
                         System.out.println(menuText);
                     }
                     case '2' -> {
@@ -88,6 +120,12 @@ public class Application {
         }
         throw new RuntimeException("Unknown loop error.");
     }
+
+    /**
+     * Sélectionner la créature.
+     * @param input Scanner
+     * @return Créature
+     */
     private static Creature selectCreature(Scanner input){
         System.out.println(creatureMenuText);
         while(input.hasNextLine()) {
@@ -109,13 +147,48 @@ public class Application {
         }
         throw new RuntimeException("Unknown loop error.");
     }
-    private static void fight(Personnage personnage, Creature creature){
-        if(personnage.getHealth() <= 0){
-            System.out.printf("Votre personnage est décédé. Il a obtenu le" +
-                    "score de %d points. Veuillez créer un nouveau personnage",
-                    personnage.getScore());
-        } else {
-            System.out.println("…");
+
+    /**
+     * Combattre contre la créature.
+     * @param personnage Personnage
+     * @param creature Créature
+     * @return Véracité d’une victoire
+     */
+    private static boolean winTheFight(Personnage personnage, Creature creature){
+        while(personnage.getHealth() > 0 && creature.getHealth() > 0){
+            int personnageAttack = personnage.getForce() + (int) (Math.random() * 9 + 1);
+            int creatureAttack= creature.getForce() + (int) (Math.random() * 9 + 1);
+            while(personnageAttack == creatureAttack){
+                personnageAttack = personnage.getForce() + (int) (Math.random() * 9 + 1);
+                creatureAttack= creature.getForce() + (int) (Math.random() * 9 + 1);
+            }
+            if(personnageAttack < creatureAttack){
+                personnage.looseHealth(creatureAttack);
+                System.out.printf("%s vous inflige %d points de dégât.\n",
+                        creature.getType(),
+                        creatureAttack);
+                if(personnage.getHealth() > 0){
+                    System.out.printf("Vous tenez bon avec %d/%d points de santé.\n",
+                            personnage.getHealth(),
+                            personnage.getHealthMax());
+                } else {
+                    System.out.println("Vous avez rendu l’âme.");
+                }
+            } else {
+                creature.looseHealth(personnageAttack);
+                System.out.printf("Vous infligez %d points de dégât à %s.\n",
+                        personnageAttack,
+                        creature.getType());
+                if(creature.getHealth() > 0){
+                    System.out.printf("%s tient bon avec %d/%d points de santé.\n",
+                            creature.getType(),
+                            creature.getHealth(),
+                            creature.getHealthMax());
+                } else {
+                    System.out.println("Votre adversaire a rendu l’âme.");
+                }
+            }
         }
+        return personnage.getHealth() > 0;
     }
 }
