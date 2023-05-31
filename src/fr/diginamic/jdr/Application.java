@@ -24,13 +24,16 @@ public class Application {
                 3. Sortir
                 """;
     /** Texte du menu de combat */
-    private static final String creatureMenuText = """
+    private static final String creatureMenuText = String.format("""
             
-            Combattre…
-            0. Un loup
-            1. Un gobelin
-            2. Un ogre
-            """;
+            Créature à combattre:
+            0. %s
+            1. %s
+            2. %s
+            """,
+            new Loup().getType(),
+            new Gobelin().getType(),
+            new Troll().getType());
     /** Texte de tentative nouvelle */
     private static final String retryText = "Essaye encore…";
 
@@ -139,7 +142,7 @@ public class Application {
                         return new Gobelin();
                     }
                     case '2' -> {
-                        return new Ogre();
+                        return new Troll();
                     }
                     default -> System.out.println(retryText);
                 }

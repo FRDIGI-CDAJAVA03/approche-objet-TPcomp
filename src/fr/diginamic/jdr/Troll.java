@@ -1,15 +1,15 @@
 package fr.diginamic.jdr;
-/** Ogre adverse */
-class Ogre extends Creature{
+/** Troll adverse */
+class Troll extends Creature{
     /**
-     * Construction d’ogre.
+     * Construction de troll.
      */
-    Ogre(){
+    Troll(){
         super(10,
                 15,
                 20,
                 30,
                 5,
-                "Ogre");
+                "Troll");
     }
 }
